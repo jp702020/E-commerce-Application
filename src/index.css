@@ -142,6 +142,53 @@ header input {
   padding: 4px 8px;
   cursor: pointer;
 }
+/* HEADER ACTIONS */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Login Button */
+.login-btn {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* User Info */
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Logout Button */
+.logout-btn {
+  background: transparent;
+  border: 1px solid #cbd5f5;
+  color: white;
+  padding: 4px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .header-actions {
+    gap: 6px;
+  }
+
+  .login-btn,
+  .logout-btn {
+    padding: 4px 8px;
+    font-size: 12px;
+  }
+}
+
 
 /* Remove Button */
 .remove-btn {
@@ -151,6 +198,115 @@ header input {
   font-size: 18px;
   cursor: pointer;
 }
+/* MODERN HEADER */
+.main-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
+  background: #0f172a;
+  color: white;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+/* Logo */
+.logo {
+  font-size: 1.4rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Search */
+.search-box {
+  flex: 1;
+  max-width: 400px;
+  margin: 0 20px;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+}
+
+/* Cart */
+.cart-link {
+  position: relative;
+  font-size: 1.4rem;
+  color: white;
+  text-decoration: none;
+}
+
+.cart-count {
+  position: absolute;
+  top: -6px;
+  right: -10px;
+  background: #ef4444;
+  color: white;
+  font-size: 12px;
+  padding: 2px 6px;
+  border-radius: 50%;
+}
+/* HEADER ACTIONS */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Login Button */
+.login-btn {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* User Info */
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Logout Button */
+.logout-btn {
+  background: transparent;
+  border: 1px solid #cbd5f5;
+  color: white;
+  padding: 4px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .header-actions {
+    gap: 6px;
+  }
+
+  .login-btn,
+  .logout-btn {
+    padding: 4px 8px;
+    font-size: 12px;
+  }
+}
+
+
+/* Responsive */
+@media (max-width: 600px) {
+  .search-box {
+    display: none;
+  }
+}
+
 
 /* Summary Box */
 .cart-summary {
