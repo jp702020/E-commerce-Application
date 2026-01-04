@@ -272,6 +272,16 @@ header input {
   border-radius: 6px;
   cursor: pointer;
 }
+/* SIMILAR PRODUCTS */
+.similar-section {
+  margin-top: 2rem;
+}
+
+.similar-section h2 {
+  margin-bottom: 1rem;
+  color: #1e293b;
+}
+
 
 /* Mobile Responsive */
 @media (max-width: 768px) {
