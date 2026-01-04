@@ -5,6 +5,7 @@ import {
   selectCartItems,
   selectCartTotalPrice
 } from "../features/cart/cartSelectors";
+import { useState } from "react";
 
 const Checkout = () => {
   const dispatch = useDispatch();
@@ -13,7 +14,27 @@ const Checkout = () => {
   const cartItems = useSelector(selectCartItems);
   const totalPrice = useSelector(selectCartTotalPrice);
 
+  // form state
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    mobile: "",
+    address: ""
+  });
+
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
   const placeOrder = () => {
+    const { name, email, mobile, address } = form;
+
+    // 🔴 EMPTY CHECK
+    if (!name || !email || !mobile || !address) {
+      alert("Please fill all the fields");
+      return;
+    }
+
     alert("Order placed successfully 🎉");
     dispatch(clearCart());
     navigate("/");
@@ -25,21 +46,44 @@ const Checkout = () => {
 
   return (
     <div className="checkout-page">
-      {/* LEFT - FORM */}
+      {/* FORM */}
       <div className="checkout-form">
         <h2>Checkout</h2>
 
-        <input placeholder="Full Name" />
-        <input placeholder="Email Address" />
-        <input placeholder="Mobile Number" />
-        <input placeholder="Delivery Address" />
+        <input
+          name="name"
+          placeholder="Full Name"
+          value={form.name}
+          onChange={handleChange}
+        />
+
+        <input
+          name="email"
+          placeholder="Email Address"
+          value={form.email}
+          onChange={handleChange}
+        />
+
+        <input
+          name="mobile"
+          placeholder="Mobile Number"
+          value={form.mobile}
+          onChange={handleChange}
+        />
+
+        <input
+          name="address"
+          placeholder="Delivery Address"
+          value={form.address}
+          onChange={handleChange}
+        />
 
         <button className="place-btn" onClick={placeOrder}>
           Place Order
         </button>
       </div>
 
-      {/* RIGHT - SUMMARY */}
+      {/* SUMMARY */}
       <div className="checkout-summary">
         <h3>Order Summary</h3>
 
