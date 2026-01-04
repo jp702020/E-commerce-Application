@@ -31,39 +31,6 @@ The application demonstrates core frontend concepts such as component-based arch
 
 ---
 
-## 📁 Project Structure
-src/
-│── app/
-│ └── store.js
-│
-│── components/
-│ ├── Header.jsx
-│ ├── ProductList.jsx
-│ ├── ProductItem.jsx
-│ ├── ProductDetail.jsx
-│ ├── Cart.jsx
-│ ├── CartItem.jsx
-│ ├── Checkout.jsx
-│ └── NotFound.jsx
-│
-│── features/
-│ ├── cart/
-│ │ ├── cartSlice.js
-│ │ └── cartSelectors.js
-│ └── products/
-│ └── productSlice.js
-│
-│── hooks/
-│ └── useFetchProducts.js
-│
-│── routes/
-│ └── router.jsx
-│
-│── App.jsx
-│── main.jsx
-│── index.css
-
----
 
 ## 🔄 Routing
 
@@ -148,7 +115,9 @@ npm run dev
 📌 GitHub Repository
 
 🔗 Repository Link:
-👉 https://github.com/jp702020/E-commerce-Application
+👉 ## 📌 GitHub Repository
+🔗 [ShoppyGlobe – E-commerce Application](https://github.com/jp702020/E-commerce-Application)
+
 
 👨‍💻 Author
 
