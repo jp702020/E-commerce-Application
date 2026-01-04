@@ -117,7 +117,7 @@ npm run dev
 🔗 Repository Link:
 👉 
 ## 📌 GitHub Repository
-🔗 [ShoppyGlobe – E-commerce Application](https://github.com/jp702020/E-commerce-Application)
+https://github.com/jp702020/E-commerce-Application
 
 
 👨‍💻 Author
