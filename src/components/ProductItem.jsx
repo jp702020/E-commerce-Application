@@ -10,34 +10,38 @@ const ProductItem = ({ product }) => {
     state.cart.some(item => item.id === product.id)
   );
 
+  const handleBuyNow = () => {
+    if (!isInCart) {
+      dispatch(addToCart(product));
+    }
+    navigate("/checkout");
+  };
+
   return (
     <div className="card">
-      {/* CLICKABLE IMAGE */}
       <Link to={`/product/${product.id}`} className="product-link">
-        <img
-          src={product.thumbnail}
-          alt={product.title}
-          loading="lazy"
-        />
-      </Link>
-
-      {/* CLICKABLE TITLE */}
-      <Link to={`/product/${product.id}`} className="product-link">
+        <img src={product.thumbnail} alt={product.title} loading="lazy" />
         <h3>{product.title}</h3>
       </Link>
 
       <p>₹{product.price}</p>
 
-      {/* CART ACTION */}
-      {!isInCart ? (
-        <button onClick={() => dispatch(addToCart(product))}>
-          Add to Cart
+      <div className="product-actions">
+        {!isInCart ? (
+          <button onClick={() => dispatch(addToCart(product))}>
+            Add to Cart
+          </button>
+        ) : (
+          <button onClick={() => navigate("/cart")}>
+            Go to Cart
+          </button>
+        )}
+
+        {/* DIRECT BUY */}
+        <button className="buy-btn" onClick={handleBuyNow}>
+          Buy Now
         </button>
-      ) : (
-        <button onClick={() => navigate("/cart")}>
-          Go to Cart
-        </button>
-      )}
+      </div>
     </div>
   );
 };
