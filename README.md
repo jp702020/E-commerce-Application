@@ -1,18 +1,156 @@
-# React + Vite
+# 🛍️ ShoppyGlobe – E-commerce Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+ShoppyGlobe is a modern, responsive e-commerce web application built using **React (Vite)**.  
+The application demonstrates core frontend concepts such as component-based architecture, state management using Redux, dynamic routing, data fetching, and performance optimization.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Live Features
 
-## React Compiler
+- Product listing fetched from external API
+- Product detail page with similar product suggestions
+- Add to Cart & Direct Buy functionality
+- Cart management with quantity control
+- Modern checkout page with validation
+- Customer login (UI-based / dummy)
+- Redux-based global state management
+- Search functionality using Redux
+- Lazy loading and code splitting
+- Fully responsive modern UI
+- Custom 404 page for invalid routes
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+---
 
-Note: This will impact Vite dev & build performances.
+## 🛠️ Tech Stack
 
-## Expanding the ESLint configuration
+- **React** (with Vite)
+- **Redux Toolkit**
+- **React Router DOM (createBrowserRouter)**
+- **JavaScript (ES6+)**
+- **CSS (Modern UI with CSS Variables)**
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 📁 Project Structure
+src/
+│── app/
+│ └── store.js
+│
+│── components/
+│ ├── Header.jsx
+│ ├── ProductList.jsx
+│ ├── ProductItem.jsx
+│ ├── ProductDetail.jsx
+│ ├── Cart.jsx
+│ ├── CartItem.jsx
+│ ├── Checkout.jsx
+│ └── NotFound.jsx
+│
+│── features/
+│ ├── cart/
+│ │ ├── cartSlice.js
+│ │ └── cartSelectors.js
+│ └── products/
+│ └── productSlice.js
+│
+│── hooks/
+│ └── useFetchProducts.js
+│
+│── routes/
+│ └── router.jsx
+│
+│── App.jsx
+│── main.jsx
+│── index.css
+
+---
+
+## 🔄 Routing
+
+Routing is implemented using **createBrowserRouter** with dynamic routes:
+
+- `/` → Home (Product List)
+- `/product/:id` → Product Detail (Dynamic)
+- `/cart` → Cart Page
+- `/checkout` → Checkout Page
+- `*` → 404 Not Found
+
+---
+
+## 📦 State Management (Redux)
+
+Redux Toolkit is used to manage global state:
+
+### Cart State
+- Add product to cart
+- Remove product from cart
+- Update product quantity (minimum 1)
+- Clear cart after order placement
+
+### Product State
+- Search filter using Redux state
+
+Selectors are used to compute:
+- Total cart quantity
+- Total cart price
+
+---
+
+## 🌐 Data Fetching
+
+- Products are fetched from:
+https://dummyjson.com/products
+- Product details are fetched dynamically using route parameters.
+- Custom hook `useFetchProducts` is used for fetching product lists.
+- Proper error handling is implemented for API failures.
+
+---
+
+## ⚡ Performance Optimization
+
+- **Lazy loading** implemented using `React.lazy` and `Suspense`
+- **Code splitting** for all major components
+- **Image lazy loading** using `loading="lazy"`
+
+---
+
+## 🎨 UI & Styling
+
+- Modern, responsive UI
+- Custom color palette using CSS variables
+- Mobile-first responsive design
+- Order-summary styled cart & checkout pages
+- Product detail page with similar products section
+
+---
+
+## ✅ Checkout Validation
+
+- User must fill:
+- Full Name
+- Email Address
+- Mobile Number
+- Delivery Address
+- Empty field validation before placing order
+- On successful order:
+- Cart is cleared
+- User is redirected to Home page
+- Confirmation message displayed
+
+---
+
+## 🧪 How to Run the Project
+
+```bash
+npm install
+npm run dev
+
+📌 GitHub Repository
+
+🔗 Repository Link:
+👉 https://github.com/jp702020/E-commerce-Application
+
+👨‍💻 Author
+
+Junaid Patel
+Frontend Developer | React | Redux | JavaScript
